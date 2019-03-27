@@ -53,6 +53,9 @@
     "preset": "jest-preset-angular",
     "setupFilesAfterEnv": [
       "<rootDir>/src/setupJest.ts"
-    ]
+    ],
+    "moduleNameMapper": {
+      "^@testing$": "<rootDir>/src/testing"
+    }
   }
 }
