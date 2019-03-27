@@ -49,9 +49,9 @@ module.exports = function(wallaby) {
     },
 
     setup: function(wallaby) {
-      const jestConfig = require("./package.json").jest;
+      let jestConfig = require("./package.json").jest;
       delete jestConfig.preset;
-      Object.assign(jestConfig, require("jest-preset-angular/jest-preset"));
+      jestConfig = Object.assign(require("jest-preset-angular/jest-preset"), jestConfig);
       jestConfig.transformIgnorePatterns.push("instrumented.*.(jsx?|html)$");
       wallaby.testFramework.configure(jestConfig);
     },
